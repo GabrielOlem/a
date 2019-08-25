@@ -1,0 +1,161 @@
+.data
+	string1: .asciiz "AEIOUNR"
+    string2: .asciiz "AEIOUNRS"
+.text
+	la x31 string1
+    la x30 string2
+    addi x29 x0 65
+    addi x28 x0 66
+    addi x27 x0 67
+    addi x26 x0 68
+    addi x25 x0 69
+    addi x24 x0 70
+    addi x23 x0 71
+    addi x22 x0 72
+    addi x21 x0 73
+    addi x20 x0 74
+    addi x19 x0 75
+    addi x18 x0 76
+    addi x17 x0 77
+    addi x16 x0 78
+    addi x15 x0 79
+    addi x14 x0 80
+    addi x13 x0 81
+    addi x12 x0 82
+    addi x11 x0 83
+    addi x10 x0 84
+    addi x9 x0 85
+    addi x8 x0 86
+    addi x7 x0 87
+    addi x6 x0 88
+    addi x5 x0 89    
+    addi x4 x0 90
+    add x2 x0 x0
+    .loop:
+    	lb x3 0 x31
+        beq x3 x0 .sai
+        addi x31 x31 1
+        beq x3 x29 .um
+        beq x3 x25 .um
+        beq x3 x21 .um
+        beq x3 x15 .um
+        beq x3 x9 .um
+        beq x3 x16 .um
+        beq x3 x12 .um
+        beq x3 x11 .um
+        
+        beq x3 x26 .dois
+        beq x3 x23 .dois
+        beq x3 x10 .dois
+        
+        beq x3 x28 .tres
+        beq x3 x27 .tres
+        beq x3 x17 .tres
+        beq x3 x14 .tres
+        
+        beq x3 x24 .quatro
+        beq x3 x22 .quatro
+        beq x3 x8 .quatro
+        beq x3 x7 .quatro
+        beq x3 x5 .quatro
+        
+        
+        beq x3 x19 .cinco
+        
+        beq x3 x20 .oito
+        beq x3 x18 .oito
+        beq x3 x6 .oito
+        
+        addi x2 x2 10
+        jal .loop
+        .um:
+        	addi x2 x2 1
+            jal .loop
+        .dois:
+        	addi x2 x2 2
+            jal .loop
+        .tres:
+        	addi x2 x2 3
+            jal .loop
+       	.quatro:
+        	addi x2 x2 4
+            jal .loop
+        .cinco:
+        	addi x2 x2 5
+            jal .loop
+        .oito:
+        	addi x2 x2 8
+            jal .loop
+	.sai:
+    add x31 x0 x2
+    add x2 x0 x0
+    .loop1:
+    	lb x3 0 x30
+        beq x3 x0 .sai1
+        addi x30 x30 1
+        beq x3 x29 .um1
+        beq x3 x25 .um1
+        beq x3 x21 .um1
+        beq x3 x15 .um1
+        beq x3 x9 .um1
+        beq x3 x16 .um1
+        beq x3 x12 .um1
+        beq x3 x11 .um1
+        
+        beq x3 x26 .dois1
+        beq x3 x23 .dois1
+        beq x3 x10 .dois1
+        
+        beq x3 x28 .tres1
+        beq x3 x27 .tres1
+        beq x3 x17 .tres1
+        beq x3 x14 .tres1
+        
+        beq x3 x24 .quatro1
+        beq x3 x22 .quatro1
+        beq x3 x8 .quatro1
+        beq x3 x7 .quatro1
+        beq x3 x5 .quatro1
+        
+        
+        beq x3 x19 .cinco1
+        
+        beq x3 x20 .oito1
+        beq x3 x18 .oito1
+        beq x3 x6 .oito1
+        
+        addi x2 x2 10
+        jal .loop1
+        .um1:
+        	addi x2 x2 1
+            jal .loop1
+        .dois1:
+        	addi x2 x2 2
+            jal .loop1
+        .tres1:
+        	addi x2 x2 3
+            jal .loop1
+       	.quatro1:
+        	addi x2 x2 4
+            jal .loop1
+        .cinco1:
+        	addi x2 x2 5
+            jal .loop1
+        .oito1:
+        	addi x2 x2 8
+            jal .loop1
+	.sai1:
+    add x30 x0 x2
+    beq x31 x30 .igual
+    blt x31 x30 .printaB
+    addi x7 x0 65
+    jal .exit
+    .igual:
+    	addi x7 x0 69
+        jal .exit
+   	.printaB:
+    	addi x7 x0 66
+        jal .exit
+    .exit:
+    	
+    
